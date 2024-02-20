@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website dengan Background Video</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden; /* Hide the scrollbar */
+      text-decoration: none;
+    }
+
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Place video behind other elements */
+    }
+
+    .navbar {
+      background-color: transparent;
+      border: none;
+      z-index: 1; /* Place navbar above video */
+    }
+
+    .navbar-brand {
+      order: -1;
+      color: #fff;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-dark .navbar-nav .nav-link.active {
+      color: #007bff;
+    }
+
+    #home-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 0; /* Place home section above video */
+      color: #00c3ff; /* Set text color to white */
+      text-decoration: none;
+    }
+
+    #home-section h1 {
+      z-index: 1; /* Place content above video */
+    }
+    #home-section p {
+        text-decoration: none;
+        color: rgb(187, 255, 0);
+    }
+    #home-section a {
+        text-decoration: none;
+        color: rgb(187, 255, 0);
+    }
+    span{
+        color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video Background -->
+  <video id="video-background" autoplay loop>
+    <source src="gojo.mp4">
+  </video>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Gojo Satoru</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto"> <!-- ml-auto to align to the right -->
+        <li class="nav-item">
+          <a class="nav-link active" href="#home-section">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-section">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact-section">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home-section">
+    <h1>Gojo <span>Satoru</span></h1>
+    <p>Create By <b><a style="text-decoration:none" href="http://t.me/@kangsayurr">KIRA</a></b></p>
+  </section>
+
+  <!-- Other Sections (e.g., About, Contact) -->
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
